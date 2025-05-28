@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from locators.locators import AuthLocators
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
+from helpers import is_element_present
 
 
 class TestAuth:
@@ -147,6 +148,11 @@ class TestAuth:
         )
         driver.find_element(*AuthLocators.BUTTON_LOGOUT_XPATH).click()
 
+        WebDriverWait(driver, 3).until(
+            expected_conditions.visibility_of_element_located(
+                AuthLocators.BUTTON_LOGIN_AND_REGISTER_XPATH
+            )
+        )
         count_elem = is_element_present(driver, AuthLocators.USER_NAME_XPATH)
         assert (
             driver.find_element(*AuthLocators.BUTTON_LOGIN_AND_REGISTER_XPATH)
