@@ -5,6 +5,7 @@ from locators.locators import AuthLocators
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from helpers import is_element_present
+from data import user_login_email, user_login_password
 
 
 class TestAuth:
@@ -19,10 +20,10 @@ class TestAuth:
         )
         driver.find_element(*AuthLocators.BUTTON_LOGIN_AND_REGISTER_XPATH).click()
 
-        driver.find_element(*AuthLocators.INPUT_EMAIL_XPATH).send_keys(
-            "2347aceb-21ee-41e7-ba42-ebc09ed93130@mail.com"
+        driver.find_element(*AuthLocators.INPUT_EMAIL_XPATH).send_keys(user_login_email)
+        driver.find_element(*AuthLocators.INPUT_PASSWORD_XPATH).send_keys(
+            user_login_password
         )
-        driver.find_element(*AuthLocators.INPUT_PASSWORD_XPATH).send_keys("123456Qq")
         driver.find_element(*AuthLocators.BUTTON_ENTER_XPATH).click()
 
         WebDriverWait(driver, 3).until(
@@ -56,9 +57,11 @@ class TestAuth:
         driver.find_element(*AuthLocators.INPUT_EMAIL_XPATH).send_keys(
             correct_email_generator
         )
-        driver.find_element(*AuthLocators.INPUT_PASSWORD_XPATH).send_keys("123456Qq")
+        driver.find_element(*AuthLocators.INPUT_PASSWORD_XPATH).send_keys(
+            user_login_password
+        )
         driver.find_element(*AuthLocators.INPUT_PASSWORD_SUBMIT_XPATH).send_keys(
-            "123456Qq"
+            user_login_password
         )
         driver.find_element(*AuthLocators.BUTTON_CREATE_ACCPUNT_XPATH).click()
 

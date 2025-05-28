@@ -1,0 +1,5 @@
+user_login_email = "2347aceb-21ee-41e7-ba42-ebc09ed93130@mail.com"
+user_login_password = "123456Qq"
+name_for_post = "Я тут был"
+description_for_item = "Продаётся место недорого, я там был"
+cost_of_item = "1000"

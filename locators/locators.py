@@ -22,3 +22,21 @@ class AuthLocators:
     BUTTON_LOGOUT_XPATH = (By.XPATH, ".//button[text()='Выйти']")
     SPAN_ERROR_XPATH = (By.XPATH, ".//span[text()='Ошибка']")
 
+
+class CreatePost:
+    BUTTON_CREATE_POST_XPATH = (By.XPATH, ".//button[text()='Разместить объявление']")
+    FORM_WITH_TITLE_AUTH_XPATH = (
+        By.XPATH,
+        ".//form//h1[text()='Чтобы разместить объявление, авторизуйтесь']",
+    )
+    INPUT_POST_XPATH = (By.XPATH, ".//input[@name='name']")
+    TEXTAREA_DESCRIPTION_FOR_ITEM_XPATH = (By.XPATH, ".//textarea[@name='description']")
+    INPUT_COST_OF_ITEM_XPATH = (By.XPATH, ".//input[@name='price']")
+    DROPDOWN_CITY_XPATH = (
+        By.XPATH,
+        ".///button[@class='dropDownMenu_arrowUp__I25Xq dropDownMenu_noDefault__wSKsP']",
+    )
+    CITY_TO_SELECT_XPATH = (
+        By.XPATH,
+        ".//div[@class='dropDownMenu_options__CmHmm'][1]/button[1]",
+    )
