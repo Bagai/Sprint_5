@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from locators.locators import AuthLocators
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
-from helpers import is_element_present, wrong_email_generator, correct_email_generator
+from helpers import wrong_email_generator, correct_email_generator
 from data import user_login_email, user_login_password
 from urls.urls import Urls
 
@@ -136,7 +136,6 @@ class TestAuth:
             and name_user == "Ошибка"
         )
 
-
     def test_auth_logout(self, driver):
         driver.get(Urls.desk_url)
 
@@ -165,8 +164,6 @@ class TestAuth:
                 AuthLocators.BUTTON_LOGIN_AND_REGISTER_XPATH
             )
         )
-        count_elem = is_element_present(driver, AuthLocators.USER_NAME_XPATH)
         assert driver.find_element(
             *AuthLocators.BUTTON_LOGIN_AND_REGISTER_XPATH
         ).is_displayed()
-
